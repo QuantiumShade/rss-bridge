@@ -22,7 +22,7 @@ class FaunamarinBridge extends BridgeAbstract {
 			
 			$image = $element->find('img', 0)->src;
 			
-			$tmp = $element->find('span.price', 0);
+			$tmp = $element->find('bdi', 0);
 			$price = html_entity_decode($tmp->innertext);
 
 			
