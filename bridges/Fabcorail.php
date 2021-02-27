@@ -11,20 +11,21 @@ class Fabcorail extends BridgeAbstract {
 		$html = getSimpleHTMLDOM(self::URI)
 			or returnServerError('Could not request Fabcorail.');
 
-		foreach($html->find('article.blog-post') as $element) {
+		foreach($html->find('div.product-container') as $element) {
 			$item = array();
-			$temp = $element->find('h1 a', 0);
+			$temp = $element->find('a.product-name', 0);
 			$titre = html_entity_decode($temp->innertext);
 			$url = $temp->href;
 
-			$temp = $element->find('div.blog-post-content', 0);
-
+			$temp = $element->find('div.left-block', 0);
+			$temp = $element->find('div.product-image-container', 0);
 			// retrieve .gif instead of static .jpg
-			$images = $temp->find('p img');
+			$images = $temp->find('img');
 			foreach($images as $image) {
 				$img_src = str_replace('.jpg', '.gif', $image->src);
 				$image->src = $img_src;
 			}
+			
 			$content = $temp->innertext;
 
 			$item['content'] = trim($content);
