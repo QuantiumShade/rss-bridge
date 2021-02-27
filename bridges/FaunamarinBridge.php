@@ -13,7 +13,7 @@ class FaunamarinBridge extends BridgeAbstract {
 //$html->find('.col-12.col-md-4.col-lg-4')
 		foreach($html->find('.post-item') as $element) {
 			$item = array();
-			$temp = $element->find('h2.woocomerce-loop-product__title', 0);
+			$temp = $element->find('h2.woocommerce-loop-product__title', 0);
 			$titre = html_entity_decode($temp->innertext);
 			$url = $temp->href;
 
