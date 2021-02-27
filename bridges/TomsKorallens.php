@@ -1,21 +1,21 @@
 <?php
-class FaunamarinBridge extends BridgeAbstract {
+class TomsKorallens extends BridgeAbstract {
 
 	const MAINTAINER = 'bg';
-	const NAME = 'FaunamarinBridge';
+	const NAME = 'TomsKorallens';
 	const URI = 'toms-korallen.de/shop/';
-	const CACHE_TIMEOUT = 300; // 5min
-	const DESCRIPTION = 'FaunamarinBridge';
+	const CACHE_TIMEOUT = 600; // 10min
+	const DESCRIPTION = 'TomsKorallens';
 
 	public function collectData(){
 		$html = getSimpleHTMLDOM(self::URI)
-			or returnServerError('Could not request FaunamarinBridge.');
+			or returnServerError('Could not request TomsKorallens.');
 //$html->find('.col-12.col-md-4.col-lg-4')
 		foreach($html->find('.post-item') as $element) {
 			$item = array();
 			$temp = $element->find('h2.woocommerce-loop-product__title', 0);
 			$titre = html_entity_decode($temp->innertext);
-			$url = $temp->href;
+			$url = $element->find('a.woocommerce-loop-product__link', 0)->href;
 
 
 	
