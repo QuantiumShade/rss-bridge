@@ -20,9 +20,11 @@ class FabcorailBridge extends BridgeAbstract {
 
 			$temp = $element->find('a.product_img_link', 0);
 			
-			$temp2 = $element->find('a.product_img_link', 1);
-			// $images = $temp->find('img');
+		
 
+			$images = $temp->find('img');
+
+			$temp2 = $temp->find('img', 0);
 			// foreach($images as $image) {
 			// 	$img_src = str_replace('.jpg', '.jpg', $image->src); 
 			// 	$image->src = $img_src;
@@ -35,7 +37,7 @@ class FabcorailBridge extends BridgeAbstract {
 
 			
 
-			$item['content'] = $content . 'wi' . $temp2;
+			$item['content'] = $images . 'wi' . $temp2;
 			$item['uri'] = $url;
 			$item['title'] = trim($titre) . ' | ' . trim($price);
 
