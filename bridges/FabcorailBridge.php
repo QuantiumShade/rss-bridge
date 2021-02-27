@@ -27,6 +27,8 @@ class FabcorailBridge extends BridgeAbstract {
 				$img_src = str_replace('.jpg', '.jpg', $image->src);
 				$image->src = $img_src;
 			}
+			$titre +=" "
+			$titre +=$element->find('span.price product-price', 0)
 
 			$content = $temp->innertext;
 
