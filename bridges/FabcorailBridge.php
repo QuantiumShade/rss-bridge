@@ -28,7 +28,7 @@ class FabcorailBridge extends BridgeAbstract {
 			// 	$image->src = $img_src;
 			// }
 	
-			$content = $temp->innertext;
+			$content = $temp;
 			
 			$tmp = $element->find('span.price', 0);
 			$price = html_entity_decode($tmp->innertext);
