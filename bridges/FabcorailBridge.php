@@ -19,8 +19,10 @@ class FabcorailBridge extends BridgeAbstract {
 
 			$temp = $element->find('div.left-block', 0);
 			$temp = $element->find('div.product-image-container', 0);
+
 			// retrieve .gif instead of static .jpg
-			$images = $temp->find('img');
+			$images = $temp->find('a img');
+
 			foreach($images as $image) {
 				$img_src = str_replace('.jpg', '.gif', $image->src);
 				$image->src = $img_src;
