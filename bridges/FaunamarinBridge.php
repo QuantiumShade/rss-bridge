@@ -2,42 +2,44 @@
 class FaunamarinBridge extends BridgeAbstract {
 
 	const MAINTAINER = 'bgd';
-	const NAME = 'Faunamarin';
-	const URI = 'https://www.faunamarincorals.de/en/animals/wysiwyg';
+	const NAME = 'Eurocorals';
+	const URI = 'https://www.eurocorals.com/shop/';
 	const CACHE_TIMEOUT = 300; // 5min
-	const DESCRIPTION = 'Faunamarin';
+	const DESCRIPTION = 'Eurocorals';
 
-	public function collectData(){
-		$html = getSimpleHTMLDOM(self::URI)
-			or returnServerError('Could not request Fauna marin.');
+	$html = getSimpleHTMLDOM(self::URI)
+	or returnServerError('Could not request Fabcorail.');
 
-		foreach($html->find('li.col-12') as $element) {
-			$item = array();
-			$temp = $element->find('a.thumb-title', 0);
-			$titre = html_entity_decode($temp->innertext);
-			$url = $temp->href;
-
-			$temp = $element->find('div.thumb-image', 0);
-			// retrieve .gif instead of static .jpg
-			$images = $temp->find('picture');
-
-			foreach($images as $image) {
-				$img_src = str_replace('.jpg', '.jpg', $image->src);
-				$image->src = $img_src;
-			}
-			
-		
-			$tmp = $element->find('a.price', 0);
-			$price = html_entity_decode($tmp->innertext);
-
-			$content = $temp->innertext;
-
-			$item['content'] = trim($content);
-			$item['uri'] = $url;
-			$item['title'] = trim($titre) . ' | ' . trim($price);
+foreach($html->find('div.product-small') as $element) {
+	$item = array();
+	$temp = $element->find('a.woocommerce-LoopProduct-link', 0);
+	$titre = html_entity_decode($temp->innertext);
+	$url = $temp->href;
 
 
-			$this->items[] = $item;
-		}
-	}
+	$temp = $element->find('container-image-and-badge img', 0);
+	
+
+	// $images = $temp->find('img');
+
+	// foreach($images as $image) {
+	// 	$img_src = str_replace('.jpg', '.jpg', $image->src); 
+	// 	$image->src = $img_src;
+	// }
+
+	$content = $temp;
+	
+	$tmp = $element->find('bdi', 0);
+	$price = html_entity_decode($tmp->innertext);
+
+	
+
+	$item['content'] = $content;
+	$item['uri'] = $url;
+	$item['title'] = trim($titre) . ' | ' . trim($price);
+
+
+	$this->items[] = $item;
+}
+}
 }
