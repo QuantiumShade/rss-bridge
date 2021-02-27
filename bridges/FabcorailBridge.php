@@ -17,8 +17,8 @@ class FabcorailBridge extends BridgeAbstract {
 			$titre = html_entity_decode($temp->innertext);
 			$url = $temp->href;
 
-			$temp = $element->find('div.left-block', 0);
-			$temp = $element->find('div.product-image-container', 0);
+			// $temp = $element->find('div.left-block', 0);
+			// $temp = $element->find('div.product-image-container', 0);
 			$temp = $element->find('a.product_img_link', 0);
 			// retrieve .gif instead of static .jpg
 			$images = $temp->find('img');
