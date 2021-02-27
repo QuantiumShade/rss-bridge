@@ -27,7 +27,7 @@ class FabcorailBridge extends BridgeAbstract {
            
 			// $temp = $element->find('a.product_img_link img', 0);
 
-			$image = $result->find('img.img-responsive', 0)->src;
+			$image = $element->find('img.img-responsive', 0)->src;
 
 			
 	
