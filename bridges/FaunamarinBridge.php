@@ -1,11 +1,11 @@
 <?php
 class FaunamarinBridge extends BridgeAbstract {
 
-	const MAINTAINER = 'bg';
+	const MAINTAINER = 'bgd';
 	const NAME = 'Faunamarin';
 	const URI = 'https://www.faunamarincorals.de/en/animals/wysiwyg';
 	const CACHE_TIMEOUT = 300; // 5min
-	const DESCRIPTION = 'Fauna marin';
+	const DESCRIPTION = 'Faunamarin';
 
 	public function collectData(){
 		$html = getSimpleHTMLDOM(self::URI)
