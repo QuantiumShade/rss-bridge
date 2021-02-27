@@ -22,7 +22,7 @@ class FabcorailBridge extends BridgeAbstract {
 
 		
 			foreach( $element->find('a.product_img_link') as $im) {
-				$temp = $im;
+				$temp += $im;
 			}
 
 			// $images = $temp->find('img');
