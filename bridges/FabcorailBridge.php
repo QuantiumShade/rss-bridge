@@ -22,10 +22,10 @@ class FabcorailBridge extends BridgeAbstract {
 
 			$images = $temp->find('img');
 
-			foreach($images as $image) {
-				$img_src = str_replace('.jpg', '.jpg', $image->src); 
-				$image->src = $img_src;
-			}
+			// foreach($images as $image) {
+			// 	$img_src = str_replace('.jpg', '.jpg', $image->src); 
+			// 	$image->src = $img_src;
+			// }
 			
 		
 			$tmp = $element->find('span.price', 0);
