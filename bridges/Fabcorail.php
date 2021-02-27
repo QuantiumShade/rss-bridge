@@ -1,7 +1,7 @@
 <?php
 class Fabcorail extends BridgeAbstract {
 
-	const MAINTAINER = '';
+	const MAINTAINER = 'bg';
 	const NAME = 'Fabcorail';
 	const URI = 'https://www.fabcorail.com/42-acropora';
 	const CACHE_TIMEOUT = 7200; // 2h
@@ -25,7 +25,7 @@ class Fabcorail extends BridgeAbstract {
 				$img_src = str_replace('.jpg', '.gif', $image->src);
 				$image->src = $img_src;
 			}
-			
+
 			$content = $temp->innertext;
 
 			$item['content'] = trim($content);
