@@ -18,10 +18,13 @@ class FabcorailBridge extends BridgeAbstract {
 			$url = $temp->href;
 
 
-			$temp = $element->find('a.product_img_link');
+			// $temp = $element->find('a.product_img_link', 0);
 
 		
-	
+			foreach( $element->find('a.product_img_link') as $im) {
+				$temp = $im;
+			}
+
 			// $images = $temp->find('img');
 
 			// foreach($images as $image) {
