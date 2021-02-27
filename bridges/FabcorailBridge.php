@@ -28,14 +28,14 @@ class FabcorailBridge extends BridgeAbstract {
 				$image->src = $img_src;
 			}
 			
-			$author =$element->find('span.price product-price', 0);
+			$price =$element->find('span.price product-price', 0);
 
 			$content = $temp->innertext;
 
 			$item['content'] = trim($content);
 			$item['uri'] = $url;
-			$item['title'] = trim($titre);
-			$item['author'] = trim($author);
+			$item['title'] = trim($titre) . ' | ' . trim($price);
+
 
 			$this->items[] = $item;
 		}
