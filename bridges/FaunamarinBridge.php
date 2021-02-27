@@ -11,7 +11,7 @@ class FaunamarinBridge extends BridgeAbstract {
 		$html = getSimpleHTMLDOM(self::URI)
 			or returnServerError('Could not request FaunamarinBridge.');
 
-		foreach($html->find('article.cmp') as $element) {
+		foreach($html->find('div.thumb-inner') as $element) {
 			$item = array();
 			$temp = $element->find('a.thumb-title', 0);
 			$titre = html_entity_decode($temp->innertext);
