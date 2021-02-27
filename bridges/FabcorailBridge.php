@@ -4,7 +4,7 @@ class FabcorailBridge extends BridgeAbstract {
 	const MAINTAINER = 'bg';
 	const NAME = 'Fabcorail';
 	const URI = 'https://www.fabcorail.com/42-acropora';
-	const CACHE_TIMEOUT = 7200; // 2h
+	const CACHE_TIMEOUT = 300; // 2h
 	const DESCRIPTION = 'Fabcorail';
 
 	public function collectData(){
@@ -27,7 +27,7 @@ class FabcorailBridge extends BridgeAbstract {
 				$img_src = str_replace('.jpg', '.jpg', $image->src);
 				$image->src = $img_src;
 			}
-			$titre +=" "
+	
 			$titre +=$element->find('span.price product-price', 0)
 
 			$content = $temp->innertext;
