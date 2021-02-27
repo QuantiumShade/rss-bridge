@@ -4,7 +4,7 @@ class FabcorailBridge extends BridgeAbstract {
 	const MAINTAINER = 'bg';
 	const NAME = 'Fabcorail';
 	const URI = 'https://www.fabcorail.com/42-acropora';
-	const CACHE_TIMEOUT = 7200; // 2h
+	const CACHE_TIMEOUT = 300; // 5min
 	const DESCRIPTION = 'Fabcorail';
 
 	public function collectData(){
