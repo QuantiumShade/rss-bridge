@@ -18,25 +18,28 @@ class FabcorailBridge extends BridgeAbstract {
 			$url = $temp->href;
 
 
-			$temp = $element->find('a.product_img_link', 0);
+			// $temp = $element->find('a.product_img_link', 0);
 
+			foreach($element->find('a.product_img_link') as $row) {
+				$content = $row->find('img', 1)->plaintext;
+			}
 			// $images = $temp->find('img');
 
 			// foreach($images as $image) {
 			// 	$img_src = str_replace('.jpg', '.jpg', $image->src); 
 			// 	$image->src = $img_src;
 			// }
-			$temp2 = $element->find('a.product_img_link.img', 0);
+			// $temp2 = $element->find('a.product_img_link.img');
 
-			$content = $temp->innertext;
-			$content2 = $temp2->innertext;
+			// $content = $temp->innertext;
+			// $content2 = $temp2->innertext;
 		
 			$tmp = $element->find('span.price', 0);
 			$price = html_entity_decode($tmp->innertext);
 
 			
-
-			$item['content'] = trim($content) . ' | ' . trim($content2);
+			// . ' | ' . trim($content2)
+			$item['content'] = trim($content) ;
 			$item['uri'] = $url;
 			$item['title'] = trim($titre) . ' | ' . trim($price);
 
