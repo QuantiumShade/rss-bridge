@@ -25,8 +25,8 @@ class FabcorailBridge extends BridgeAbstract {
 			}
 
 			foreach($images as $image) {
-				$img_src = $image->src;
-				// $img_src = str_replace('.jpg', '.jpg', $image->src); 
+				// $img_src = $image->src;
+				 $img_src = str_replace('.jpg', '.jpg', $image->src); 
 				$image->src = $img_src;
 			}
 			
