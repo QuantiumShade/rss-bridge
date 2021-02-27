@@ -29,7 +29,7 @@ class FabcorailBridge extends BridgeAbstract {
 			}
 			
 		
-			$tmp = $element->find('span.price product-price', 0);
+			$tmp = $element->find('span.price', 0);
 			$price = html_entity_decode($tmp->innertext);
 
 			$content = $temp->innertext;
