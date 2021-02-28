@@ -31,7 +31,7 @@ class TomsKorallensBridge extends BridgeAbstract {
 			$item['content'] = '<img src="' . $image . '">';
 	
 			$item['uri'] = $url;
-			$item['title'] = trim($titre) . ' | ' . trim($price,'<span class="woocommerce-Price-currencySymbol"&gt;€&lt;/span>');
+			$item['title'] = trim($titre) . ' | ' . substr($price,0,6);
 
 
 			$this->items[] = $item;
