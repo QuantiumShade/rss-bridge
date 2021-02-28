@@ -1,5 +1,5 @@
 <?php
-class TomsKorallens extends BridgeAbstract {
+class TomsKorallensBridge extends BridgeAbstract {
 
 	const MAINTAINER = 'bg';
 	const NAME = 'TomsKorallens';
